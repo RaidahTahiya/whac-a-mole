@@ -1,0 +1,120 @@
+<!--
+Name: Raidah Tahiya
+Date Created: March 6, 2026
+Description: This file contains the main structure of the Wack-a-Mole game. It organizes the layout
+             of the page by dividing sections of the game into components including the header, splash page,
+             canvas, and game screen. It organizes the game screen into classes according to what they are 
+             (such as holes, moles, or explosives) so that they can be accessed through the server side and 
+             chnaged throughout the game.
+-->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wack-a-mole!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+    <div id="header">
+        <input type="button" id="helpme" value="Help">
+    </div>
+ 
+    <div id="helpinfo">
+        <h1>How to Play</h1>
+        <ul>
+            <li>Click moles BEFORE they dissapear to gain points</li>
+            <li>Avoid the bombs or lose a point</li>
+            <li>3 levels</li>
+            <li>30 seconds per level</li>
+            <li>Good Luck!</li>
+        </ul>
+    </div>
+ 
+    <div id="splash-page">
+        <h1>WHACK-A-MOLE!</h1>
+        <canvas id='splash-canvas' height='190' width='320'></canvas>
+        <input type="button" id="start-butn" value="Start">
+    </div>
+ 
+    <div id="game-screen">
+        <div id="info">
+            <div id="score">
+                <h1>Points: 0</h1>
+            </div>
+            <div id="time">
+                <h1>Time: 0:30</h1>
+            </div>
+            <div id="level-info">
+                <h1>Level: 1</h1>
+            </div>
+        </div>
+        <div id="holes">
+            <div class="row">
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+            </div>
+            <div class="row">
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+            </div>
+            <div class="row">
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+                <div class="hole">
+                    <img class="popup" src="">
+                    <img class="hole-img" src="images/hole1.png" width="250">
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="level-modal">
+        <div id="level-box">
+            <h1 id="level-title">Level 1</h1>
+            <p id="level-desc">Easy</p>
+            <input type="button" id="level-start-btn" value="Go!">
+        </div>
+    </div>
+ 
+    <div id="game-over-modal">
+        <div id="game-over-box">
+            <h1>Game Over!</h1>
+            <p id="final-score">Your Score: 0</p>
+            <p id="best-score">Best Score: 0</p>
+            <p id="last-score"></p>
+            <input type="button" id="play-again" value="Play Again">
+        </div>
+    </div>
+ 
+    <script src="js/script.js"></script>
+</body>
+</html>

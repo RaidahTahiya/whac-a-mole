@@ -1,0 +1,375 @@
+/*
+Names: Raidah Tahiya
+Date Created: March 6, 2026
+Description: The style sheet for Wack-a-mole. This file contains the CSS code used to
+             style the game, including the background, fonts, layout, buttons, media query 
+             so that it operateds as a mobile game, and other visual elements.   
+*/
+
+body {
+    background-color: #a8d5a2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+#header {
+    display: none;
+    background-color: rgba(74, 124, 54, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 0;
+    width: 100%;
+    border-bottom: 2px solid #3a6e2a;
+}
+
+#helpme {
+    margin: 8px 16px;
+    background-color: #fff9e6;
+    color: #4a7c36;
+    border: 2px solid #4a7c36;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    cursor: pointer;
+    width: 90px;
+}
+
+#helpme:hover {
+    background-color: #4a7c36;
+    color: white;
+}
+
+#helpinfo {
+    display: none;
+    background-color: #fff9e6;
+    color: #3a5c2a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 2px solid #4a7c36;
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    width: 220px;
+    z-index: 10;
+}
+
+#helpinfo h1 {
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    margin-top: 0;
+    font-size: 18px;
+    color: #4a7c36;
+}
+
+#helpinfo ul {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    padding-left: 16px;
+    margin: 0;
+}
+
+#splash-page {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+}
+
+#splash-page h1 {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#splash-canvas {
+    background-color: #6aab5e;
+    border-radius: 12px;
+    width: 320px;
+    height: 190px;
+}
+
+#start-butn {
+    margin-top: 24px;
+    background-color: #f5c518;
+    color: #3a3a00;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    cursor: pointer;
+    width: 180px;
+}
+
+#start-butn:hover {
+    background-color: #ffd700;
+}
+
+#game-screen {
+    display: none;
+    margin-top: 70px;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+}
+
+#score, #time, #level-info {
+    background-color: #fff9e6;
+    border: 2px solid #4a7c36;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+
+#score h1, #time h1, #level-info h1 {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 18px;
+    color: #3a5c2a;
+    margin: 6px 0;
+}
+
+#holes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hole {
+    position: relative;
+    width: 100px;
+    height: 56px;
+}
+
+.hole-img {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    width: 68px;
+    left: 17%;
+    bottom: 22px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#game-over-modal,
+#level-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#game-over-box,
+#level-box {
+    background-color: #fff9e6;
+    border-radius: 16px;
+    border: 2px solid #4a7c36;
+    padding: 30px 28px;
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+}
+
+#game-over-box h1 {
+    color: #d63031;
+    font-size: 36px;
+    margin: 0 0 4px;
+}
+
+#level-box h1 {
+    color: #4a7c36;
+    font-size: 36px;
+    margin: 0 0 4px;
+}
+
+#level-desc {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #555;
+    margin: 0 0 8px;
+}
+
+#final-score {
+    font-size: 22px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #3a3a3a;
+    margin: 0;
+}
+
+#best-score {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #888;
+    margin: 0 0 8px;
+}
+
+#best-score.new-record {
+    color: #e07000;
+    font-size: 18px;
+}
+
+#play-again,
+#level-start-btn {
+    background-color: #f5c518;
+    color: #3a3a00;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    cursor: pointer;
+}
+
+#play-again:hover,
+#level-start-btn:hover {
+    background-color: #ffd700;
+}
+
+#last-score {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #888;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    #splash-page {
+        margin-top: 40px;
+    }
+
+    #splash-page h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    #splash-canvas {
+        width: 320px;
+        height: 180px;
+    }
+
+    #start-butn {
+        width: 160px;
+        padding: 14px 20px;
+        font-size: 18px;
+        margin-top: 18px;
+    }
+
+    #game-screen {
+        margin-top: 55px;
+    }
+
+    #info {
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+    }
+
+    #score,
+    #time,
+    #level-info {
+        padding: 4px 8px;
+    }
+
+    #score h1,
+    #time h1,
+    #level-info h1 {
+        font-size: 15px;
+        margin: 4px 0;
+    }
+
+    #holes {
+        width: 100%;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .hole {
+        width: 30%;
+        height: auto;
+        aspect-ratio: 1.8 / 1;
+    }
+
+    .hole-img {
+        width: 100%;
+    }
+
+    .popup {
+        width: 65%;
+        left: 17%;
+        bottom: 22px;
+    }
+
+    #game-over-box,
+    #level-box {
+        padding: 24px 18px;
+        width: 85%;
+    }
+
+    #game-over-box h1,
+    #level-box h1 {
+        font-size: 30px;
+    }
+
+    #final-score {
+        font-size: 20px;
+    }
+
+    #helpinfo {
+        width: 170px;
+        left: 10px;
+        top: 58px;
+        padding: 16px 18px;
+    }
+
+    #helpinfo h1 {
+        font-size: 18px;
+    }
+
+    #helpinfo ul {
+        font-size: 12px;
+    }
+}
